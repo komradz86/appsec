@@ -1,0 +1,108 @@
+Source: authentic2
+Section: python
+Priority: optional
+Maintainer: Benjamin Dauvergne <bdauvergne@entrouvert.com>
+Build-Depends-Indep: python3-all-dev,
+Build-Depends: debhelper-compat (= 12),
+               dh-python,
+               python3-django,
+               python3-setuptools,
+               sassc,
+Standards-Version: 3.9.6
+Homepage: http://dev.entrouvert.org/projects/authentic/
+
+Package: python3-authentic2
+Architecture: all
+Depends: openssl,
+         python3-atomicwrites,
+         python3-attr (>=17),
+         python3-chardet,
+         python3-cryptography (>= 1.3.4),
+         python3-django (>= 3:4.2),
+         python3-django-filters,
+         python3-django-import-export (<< 3.1),
+         python3-django-import-export (>= 1),
+         python3-django-mellon (>=1.22),
+         python3-django-model-utils (<< 4.3),
+         python3-django-model-utils (>= 2.4),
+         python3-django-ratelimit,
+         python3-django-select2 (<< 7.11),
+         python3-django-select2 (>= 5),
+         python3-django-tables2 (>= 1),
+         python3-djangorestframework (<< 3.15),
+         python3-djangorestframework (>= 3.3),
+         python3-dnspython (>= 1.10),
+         python3-gadjo (>= 0.53),
+         python3-jwcrypto (>= 0.3.1),
+         python3-lasso (>= 2.4.1.100),
+         python3-ldap (>= 2.4),
+         python3-markdown (>= 2.1),
+         python3-netaddr,
+         python3-pil,
+         python3-publik-django-templatetags,
+         python3-pycryptodome,
+         python3-requests (>=2.3),
+         python3-requests-oauthlib,
+         python3-tablib,
+         python3-uwsgidecorators,
+         ${misc:Depends},
+         ${python3:Depends},
+Conflicts: python-authentic2,
+Replaces: python-authentic2,
+Description: Versatile identity server
+ Authentic is a versatile identity provider aiming to address a broad
+ range of needs, from simple to complex setups; it has support for many
+ protocols and can bridge between them.
+ .
+ It has support for ID-FF and SAMLv2 thanks to Lasso, a free (GNU GPL)
+ implementation of the Liberty Alliance specifications.
+
+Package: authentic2
+Architecture: all
+Depends: adduser,
+         dbconfig-common,
+         debconf | debconf-2.0,
+         python3-authentic2 (= ${binary:Version}),
+         python3-psycopg2,
+         python3-uwsgidecorators,
+         ucf,
+         util-linux,
+         uwsgi,
+         uwsgi-plugin-python3,
+         ${misc:Depends},
+Recommends: postgresql-client,
+Suggests: nginx,
+          postgresql,
+Description: Versatile identity server Python module
+ Authentic is a versatile identity provider aiming to address a broad
+ range of needs, from simple to complex setups; it has support for many
+ protocols and can bridge between them.
+ .
+ It has support for ID-FF and SAMLv2 thanks to Lasso, a free (GNU GPL)
+ implementation of the Liberty Alliance specifications.
+
+Package: authentic2-multitenant
+Architecture: all
+Depends: adduser,
+         debconf | debconf-2.0,
+         python3-argon2,
+         python3-authentic2 (= ${binary:Version}),
+         python3-django-tenant-schemas (>= 1.5.2.1),
+         python3-hobo,
+         python3-jwcrypto (>= 0.4.2),
+         python3-psycopg2,
+         ucf,
+         util-linux,
+         uwsgi,
+         uwsgi-plugin-python3,
+         ${misc:Depends},
+Recommends: postgresql-client,
+Suggests: nginx,
+          postgresql,
+Description: Multitenant versatile identity server Python module
+ Authentic is a versatile identity provider aiming to address a broad
+ range of needs, from simple to complex setups; it has support for many
+ protocols and can bridge between them.
+ .
+ It has support for ID-FF and SAMLv2 thanks to Lasso, a free (GNU GPL)
+ implementation of the Liberty Alliance specifications.

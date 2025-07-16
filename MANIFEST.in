@@ -1,0 +1,72 @@
+recursive-include data *
+recursive-include tests *.py *.jpg *.pem *.png *.xml *.json *.html *.txt
+recursive-include tests_rbac *.py
+recursive-exclude tests *.pyc
+recursive-exclude tests_rbac *.pyc
+
+include tox.ini .coveragerc
+
+# static
+recursive-include src/authentic2/static *.css *.scss *.js *.ico *.gif *.png *.jpg
+recursive-include src/authentic2/manager/static *.css *.scss *.js *.gif *.png *.svg
+recursive-include src/authentic2_auth_fc/static/authentic2_auth_fc *.css *.scss *.js *.png *.svg
+recursive-include src/authentic2_idp_oidc/static/authentic2_idp_oidc *.css *.scss *.js *.png *.svg
+
+# templates
+recursive-include src/authentic2/templates *.html *.txt *.xml
+recursive-include src/authentic2/apps/authenticators/templates *.html
+recursive-include src/authentic2/apps/journal/templates *.html
+recursive-include src/authentic2/backends/templates *.html *.txt *.xml
+recursive-include src/authentic2/manager/templates *.html *.txt
+recursive-include src/authentic2/saml/templates *.html *.txt *.xml
+recursive-include src/authentic2/idp/templates *.html *.txt *.xml
+recursive-include src/authentic2_idp_cas/templates *.html *.txt *.xml
+recursive-include src/authentic2/idp/saml/templates *.html *.txt *.xml
+recursive-include src/authentic2_auth_fc/templates/authentic2_auth_fc *.html *.txt
+recursive-include src/authentic2_auth_saml/templates/authentic2_auth_saml *.html
+recursive-include src/authentic2_auth_saml/templates/mellon *.html
+recursive-include src/authentic2_auth_oidc/templates/authentic2_auth_oidc *.html
+recursive-include src/authentic2_idp_oidc/templates/authentic2_idp_oidc *.html
+
+recursive-include src/authentic2/saml/fixtures *.json
+recursive-include src/authentic2/locale *.po *.mo
+recursive-include src/authentic2/saml/locale *.po *.mo
+recursive-include src/authentic2/idp/locale *.po *.mo
+recursive-include src/authentic2/idp/saml/locale *.po *.mo
+recursive-include src/authentic2_idp_cas/locale *.po *.mo
+recursive-include src/authentic2/attribute_aggregator/locale *.po *.mo
+recursive-include src/authentic2/disco_service/locale *.po *.mo
+recursive-include src/authentic2/custom_user/locale *.po *.mo
+recursive-include src/authentic2/manager/locale *.po *.mo
+recursive-include src/authentic2/a2_rbac/locale *.po *.mo
+recursive-include src/django_rbac/locale *.po *.mo
+recursive-include src/authentic2_auth_fc/locale *.po *.mo
+recursive-include src/authentic2_auth_saml/locale *.po *.mo
+recursive-include src/authentic2_auth_oidc/locale *.po *.mo
+recursive-include src/authentic2_idp_oidc/locale *.po *.mo
+
+recursive-include src/authentic2_auth_fc *.json
+
+recursive-include src/authentic2 README
+
+prune debian
+
+include *.py
+include *.sh
+include *.txt
+include *.yaml
+include .pytestrc
+include .pylintrc
+include doc/*.rst
+include doc/pictures/*
+include COPYING NEWS README AUTHORS.txt
+include getlasso3.sh
+include src/authentic2/nonce/README.rst
+include doc/conf.py doc/Makefile
+include local_settings.py.example
+include MANIFEST.in
+include VERSION
+include README
+
+exclude .git-blame-ignore-revs
+exclude .gitmodules

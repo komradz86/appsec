@@ -1,0 +1,64 @@
+=======================================
+Authentic 2 - Versatile Identity Server
+=======================================
+
+Authentic 2 requires Python 3 and Django 3.2.
+
+Installation
+============
+
+First of all, you can boot Authentic without root privileges  like this:
+
+# Initialize a virtualenv::
+
+    virtualenv venv
+    source ./venv/bin/activate
+    python -m pip install nox
+    echo "DEBUG = True" >local_settings.py
+
+# Install lasso for SAML 2.0 support
+
+    apt install python3-lasso
+
+# Initialize the database::
+
+    createdb authentic2
+    nox -s manage -- migrate
+
+# Run authentic::
+
+    nox -s manage -- runserver
+
+For testing...
+==============
+
+To run tests:
+
+    nox
+
+
+To update locales
+=================
+
+   nox -s update-locales
+
+Support
+=======
+
+Authentic's developpers and users hangs on the mailing list
+authentic@listes.entrouvert.com
+See archives or register at http://listes.entrouvert.com/info/authentic.
+
+You can "open":http://dev.entrouvert.org/projects/authentic/issues/new bug
+reports or feature request on this site.
+
+Entr'ouvert also provides a commercial support. For information, see
+http://www.entrouvert.com.
+
+
+Copyright
+=========
+
+Authentic is copyrighted by Entr'ouvert and is licensed through the GNU Affero
+General Public Licence, version 3 or later. A copy of the whole license text
+is available in the COPYING file.

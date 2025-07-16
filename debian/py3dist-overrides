@@ -1,0 +1,17 @@
+django                  python3-django
+requests                python3-requests
+django-model-utils      python3-django-model-utils
+dnspython               python3-dnspython
+django-select2          python3-django-select2
+django-tables           python3-django-tables2
+gadjo                   python3-gadjo
+XStatic_jQuery          python3-xstatic-jquery
+XStatic_jquery_ui       python3-xstatic-jquery-ui
+django-import-export    python3-django-import-export
+django-sekizai          python3-django-sekizai
+pycryptodome            python3-pycryptodome
+django-mellon           python3-django-mellon
+django-ratelimit        python3-django-ratelimit
+requests-oauthlib       python3-requests-oauthlib
+jwcrypto                python3-jwcrypto
+xstatic_select2         python3-xstatic-select2

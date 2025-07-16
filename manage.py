@@ -1,0 +1,20 @@
+#!/usr/bin/env python
+import os
+import sys
+
+if __name__ == '__main__':
+    config_file = False
+
+    argv = sys.argv[1:]
+    if argv and argv[0].startswith('--config='):
+        config_file = argv[0].split('=')[1]
+        argv.pop(0)
+
+    if config_file:
+        os.environ['AUTHENTIC2_SETTINGS_FILE'] = config_file
+
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'authentic2.settings')
+
+    from django.core.management import execute_from_command_line
+
+    execute_from_command_line(sys.argv[:1] + argv)

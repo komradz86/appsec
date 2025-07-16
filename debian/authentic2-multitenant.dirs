@@ -1,0 +1,10 @@
+etc/authentic2-multitenant
+etc/authentic2-multitenant/settings.d
+usr/lib/authentic2-multitenant
+var/lib/authentic2-multitenant/collectstatic
+var/lib/authentic2-multitenant/locale
+var/lib/authentic2-multitenant/spooler
+var/lib/authentic2-multitenant/static
+var/lib/authentic2-multitenant/templates
+var/lib/authentic2-multitenant/tenants
+var/log/authentic2-multitenant

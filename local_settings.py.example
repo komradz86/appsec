@@ -1,0 +1,14 @@
+
+# To run you must set a secret key
+SECRET_KEY = 'changeme'
+
+# Activate SAML 2 idp
+A2_IDP_SAML2_ENABLE = True
+
+# Debugging helper
+try:
+	import debug_toolbar
+except ImportError:
+	pass
+else:
+	INSTALLED_APPS += ('debug_toolbar',)

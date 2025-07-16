@@ -1,0 +1,32 @@
+#!/bin/sh
+
+NAME="authentic2"
+MANAGE="/usr/lib/authentic2/manage.py"
+USER=authentic2
+
+export AUTHENTIC2_SETTINGS_FILE=/usr/lib/authentic2/debian_config.py
+
+if [ "$(whoami)" != "$USER" ]; then
+    if command -v sudo > /dev/null; then
+      if sudo -v -u "$USER"; then
+        sudo -u "$USER" authentic2-manage "$@"
+        exit $?
+      fi
+      echo "You must run this script with $USER user"
+      exit 1
+    fi
+fi
+
+if [ -f /etc/default/authentic2 ]; then
+    . /etc/default/authentic2
+fi
+
+if [ -f /etc/authentic2/db.conf ]; then
+    . /etc/authentic2/db.conf
+fi
+
+if [ -f /etc/authentic2/authentic.conf ]; then
+    . /etc/authentic2/authentic.conf
+fi
+
+python3 ${MANAGE} "$@"

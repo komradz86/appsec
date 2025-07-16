@@ -1,0 +1,8 @@
+debian/authentic2-manage              /usr/bin
+debian/authentic2-uwsgi.ini           /etc/authentic2
+debian/conf/authentic.conf            /etc/authentic2
+debian/conf/nginx-example.conf        /usr/share/authentic2
+debian/conf/richelieu                 /usr/share/authentic2
+debian/conf/richelieu.COPYING         /usr/share/authentic2
+debian/debian_config.py               /usr/lib/authentic2
+debian/launch-authentic2.sh           /usr/lib/authentic2

@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=authentic2
+export PYBUILD_DISABLE=test
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+override_dh_install:
+	dh_install
+	mv $(CURDIR)/debian/python3-authentic2/usr/bin/manage.py $(CURDIR)/debian/python3-authentic2/usr/lib/authentic2/manage.py

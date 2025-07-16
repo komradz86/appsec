@@ -1,0 +1,27 @@
+[Unit]
+Description=Authentic 2 (multitenants)
+After=network.target postgresql.service
+Wants=postgresql.service
+
+[Service]
+SyslogIdentifier=uwsgi/authentic
+Environment=AUTHENTIC2_SETTINGS_FILE=/usr/lib/%p/debian_config.py
+Environment=LANG=C.UTF-8
+User=authentic-multitenant
+Group=authentic-multitenant
+ExecStartPre=/usr/bin/authentic2-multitenant-manage migrate_schemas --noinput --verbosity 1
+ExecStartPre=/usr/bin/authentic2-multitenant-manage collectstatic --noinput
+ExecStartPre=/bin/mkdir -p /var/lib/%p/spooler/%m/
+ExecStart=/usr/bin/uwsgi --ini /etc/%p/%p-uwsgi.ini --spooler /var/lib/%p/spooler/%m/
+ExecReload=/bin/kill -HUP $MAINPID
+KillSignal=SIGQUIT
+TimeoutStartSec=0
+PrivateTmp=true
+Restart=on-failure
+RuntimeDirectory=%p
+Type=notify
+NotifyAccess=all
+LimitNOFILE=2048
+
+[Install]
+WantedBy=multi-user.target

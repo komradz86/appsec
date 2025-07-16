@@ -1,0 +1,26 @@
+[Unit]
+Description=Authentic 2
+After=network.target postgresql.service
+Wants=postgresql.service
+
+[Service]
+SyslogIdentifier=uwsgi/authentic
+Environment=AUTHENTIC2_SETTINGS_FILE=/usr/lib/%p/debian_config.py
+Environment=LANG=C.UTF-8
+User=authentic2
+Group=authentic2
+ExecStartPre=/usr/bin/authentic2-manage migrate --noinput
+ExecStartPre=/usr/bin/authentic2-manage collectstatic --noinput
+ExecStartPre=/bin/mkdir -p /var/lib/%p/spooler/%m/
+ExecStart=/usr/lib/authentic2/launch-authentic2.sh --ini /etc/%p/%p-uwsgi.ini --spooler /var/lib/%p/spooler/%m/
+ExecReload=/bin/kill -HUP $MAINPID
+KillSignal=SIGQUIT
+TimeoutStartSec=0
+PrivateTmp=true
+Restart=on-failure
+RuntimeDirectory=%p
+Type=notify
+NotifyAccess=all
+
+[Install]
+WantedBy=multi-user.target

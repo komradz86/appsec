@@ -1,0 +1,10 @@
+etc/authentic2
+etc/authentic2/settings.d
+usr/lib/authentic2
+var/lib/authentic2/collectstatic
+var/lib/authentic2/locale
+var/lib/authentic2/media
+var/lib/authentic2/spooler
+var/lib/authentic2/static
+var/lib/authentic2/templates
+var/log/authentic2

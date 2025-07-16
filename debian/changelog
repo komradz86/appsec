@@ -1,0 +1,5 @@
+authentic2 (2.46) stable; urgency=low
+
+  * Python3 packaging
+
+ -- Benjamin Dauvergne <bdauvergne@entrouvert.com>  Mon, 25 May 2020 10:54:59 +0200
