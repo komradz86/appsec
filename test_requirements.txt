@@ -21,3 +21,4 @@ responses
 uwsgidecorators
 git+https://git.entrouvert.org/entrouvert/gadjo.git@main
 git+https://git.entrouvert.org/entrouvert/django-mellon.git
+urllib3>=2.6.3 # not directly required, pinned by Snyk to avoid a vulnerability
